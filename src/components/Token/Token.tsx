@@ -8,7 +8,7 @@ const Token = ({ balance, map, remove }: any) => {
         <div className={st_token.token}>
             <div className={st_token.denom}>
                  <img 
-                src={`images/svg/${visualDenomName.get(balance.denom)}.svg`}/>
+                src={`images/png/tokens/${visualDenomName.get(balance.denom)}.png`}/>
                 &nbsp;
                 <h3>{visualDenomName.get(balance.denom)}</h3>            
             </div>

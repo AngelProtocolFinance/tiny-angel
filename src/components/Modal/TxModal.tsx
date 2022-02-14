@@ -1,4 +1,4 @@
-import { MsgSend, MsgWithdrawDelegatorReward } from '@terra-money/terra.js'
+import { MsgExecuteContract, MsgSend, MsgWithdrawDelegatorReward } from '@terra-money/terra.js'
 import { Modal, ModalContent } from "@chakra-ui/react";
 import { UserDenied, CreateTxFailed, TxFailed, 
     TxUnspecifiedError, Timeout, TxResult, 
@@ -31,7 +31,7 @@ export enum TxStep {
     /*Tx Failed*/
 }
 
-type TinyAngelMsgs = MsgSend[] | (MsgSend | MsgWithdrawDelegatorReward)[];
+type TinyAngelMsgs = (MsgSend | MsgExecuteContract)[] | (MsgSend | MsgWithdrawDelegatorReward)[];
 
 const TxModal = ({ msgs }: { msgs: TinyAngelMsgs }): JSX.Element => {
     const client = useLCDClient()
