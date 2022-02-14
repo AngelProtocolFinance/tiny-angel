@@ -1,0 +1,149 @@
+.columns {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+}
+
+.outer_tokens_container {
+    margin-top: 80px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-collapse: separate !important;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+
+.outer_tokens_container > 
+.inner_tokens_container {
+    height: 100%;
+}
+
+.outer_tokens_container > 
+.inner_tokens_container >
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.outer_tokens_container > 
+.inner_tokens_container >
+.heading > h3 {
+    color: #eceded;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.outer_tokens_container > 
+.inner_tokens_container > 
+.tokens_container {
+    width: 100%;
+    max-height: 375px;
+    height: 375px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.outer_tokens_container > 
+.inner_tokens_container > 
+.tokens_container::-webkit-scrollbar {
+    display: none;
+}
+
+.token {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 17.5px;
+
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.4px);
+    -webkit-backdrop-filter: blur(5.4px);
+    border: 1px solid rgba(255, 255, 255, 0.31);
+}
+
+.token > .denom {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 5px;
+    cursor: default;
+}
+
+.token > .denom > img {
+    border: 1px solid #7ec681;
+    border-radius: 15px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.token > .denom > h3 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.token > .amount {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 25px;
+    cursor: default;
+}
+
+.token > .amount > .conversions {
+    display: flex;
+    flex-direction: column;
+}
+
+.token > .amount > .conversions > h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.token > .amount > .conversions > h5 {
+    font-size: 0.57rem;
+    font-weight: 500;
+    color: #eceded;
+}
+
+.token > .amount > button {
+    font-size: 1.5rem;
+    color: #f05a22;
+}
+
+.donate_button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px 0;
+    border: 2px solid #F59700;
+    border-radius: 10px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition-duration: 0.5s;
+}
+
+.donate_button:hover {
+    background-color: #F59700;
+}
+
+@media screen and (max-width: 768px) {
+    .columns {
+        width: 100%;
+    }
+
+    .outer_tokens_container {
+        margin-top: 25px;
+    }
+}

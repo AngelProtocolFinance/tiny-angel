@@ -1,0 +1,80 @@
+.description {
+    margin-top: 80px;
+    width: 51%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.description > .text > h1 {
+    color: white;
+    font-family: 'Montserrat', 'sans-serif';
+    font-weight: 700;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.description > .text > h3 {
+    margin-top: 10px;
+    color: #eceded;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.description > .donation_slider {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.description > .donation_slider > h6 {
+    margin-top: 10px;
+    color: #eceded;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.description > .donation_slider > .slider {
+    margin-bottom: 15px;
+}
+
+.description > .donation_slider >
+button {
+    width: 100%;
+    padding: 15px 0;
+    border: 2px solid #F59700;
+    border-radius: 10px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition-duration: 0.5s;
+}
+
+.description > .donation_slider >
+button:hover {
+    background-color: #F59700;
+}
+
+@media screen and (max-width: 768px) {
+    .description {
+        width: 100%;
+    }
+
+    .description > .text > h1 {
+        font-size: 2.25rem;
+    }
+
+    .description > .text > h3 {
+        font-size: 1.25rem;
+    }
+
+    .description > .donation_slider {
+        gap: 10px;
+    }
+
+    .description > .donation_slider > h6 {
+        margin-top: 35px;
+        font-size: 0.75rem;
+    }
+}

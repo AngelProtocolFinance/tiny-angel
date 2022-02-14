@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+html,
+body {
+  margin: 0;
+}
+
+html {
+  font-family: 'Montserrat', 'sans-serif';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  overflow: auto;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+#app {
+  background: rgb(38,103,148);
+  background: linear-gradient(0deg, rgb(27, 71, 102) 0%, rgba(84,163,217,1) 100%);
+  overflow-x: hidden;
+}
+
+/* Chakra Dialog Style Overwrite */
+.chakra-modal__content {
+  background: rgba(255, 255, 255, 0.75) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(5.4px) !important;
+  -webkit-backdrop-filter: blur(5.4px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.31) !important;
+}
+
+@media screen and (max-width: 768px) {
+  #app > :nth-child(2) {
+    margin-top: 50px;
+  }
+
+  #app > :nth-child(3) {
+    margin-top: -20px;
+    padding-bottom: 60px;
+  }
+}

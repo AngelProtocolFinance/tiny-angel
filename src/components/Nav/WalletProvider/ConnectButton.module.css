@@ -1,0 +1,33 @@
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+}
+
+.modal > .title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 15px 0;
+}
+
+.modal > .button {
+    margin-top: 15px;
+    border: 1px solid #54A3D9;
+    color: #54A3D9;
+    padding: 10px 30px;
+    width: 100%;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+
+    display: grid;
+    place-items: center;
+
+    transition-duration: 0.25s;
+}
+
+.modal > .button:hover {
+    background-color: #54A3D9;
+    color: white;
+}
