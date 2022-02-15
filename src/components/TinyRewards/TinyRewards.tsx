@@ -57,22 +57,20 @@ export default function TinyRewards () {
     }
 
     const rewardDonate = async () => {
-        if( validatorAddresses.length === 0 ) {
+        if( validatorAddresses.length === 0 || totalRewards.length === 0 ) {
             return;
         }
 
         const msgs: (MsgSend | MsgWithdrawDelegatorReward)[] 
         = claimReward(user_address, validatorAddresses)
 
-        if ( totalRewards.length !== 0 ) {
-            const tinyRewardsObj = totalRewards.reduce((obj, el) => {
-                return Object.assign(obj, { [el.denom]: el.amount })
-            }, {})
+        const tinyRewardsObj = totalRewards.reduce((obj, el) => {
+            return Object.assign(obj, { [el.denom]: el.amount })
+        }, {})
 
-            const [ sendRewardsToAngelMsg ] = donateTinyAmount(user_address, ANGEL_PROTO_ADDRESS_MAIN, tinyRewardsObj);
-            msgs.push(sendRewardsToAngelMsg);
-        }
-
+        const [ sendRewardsToAngelMsg ] = donateTinyAmount(user_address, ANGEL_PROTO_ADDRESS_MAIN, tinyRewardsObj);
+        msgs.push(sendRewardsToAngelMsg);
+        
         setMsgs(msgs);
     }
 
