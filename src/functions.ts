@@ -20,7 +20,7 @@ toTerraAmount(donatables.map(b => ustValue(b, map)).reduce((p, c) => p + c, 0))
 
 export const getCW20Swaprate = async ( liq_addr: string ): Promise<number> => {
     const liquidity_pool_query = 
-    `https://bombay-lcd.terra.dev/wasm/contracts/${liq_addr}/store?query_msg=%7B%22pool%22:%7B%7D%7D`
+    `https://lcd.terra.dev/wasm/contracts/${liq_addr}/store?query_msg=%7B%22pool%22:%7B%7D%7D`
     const { data: liq_pool_data } = await axios.get(liquidity_pool_query);
     
     const {
