@@ -12,7 +12,7 @@ export const visualDenomName = new Map([
     ["usek", "SET"], ["unok", "NOT"], ["udkk", "DKT"],
     ["uidr", "IDT"], ["uphp", "PHT"], ["uhkd", "HKT"],
     ["umyr", "MYT"], ["utwd", "TWT"], ["ANC", "ANC"],
-    ["MINE", "MINE"], ["MIR", "MIR"]
+    ["MINE", "MINE"], ["MIR", "MIR"], ["HALO", "HALO"],
 ])
 
 //BOMBAY
@@ -45,4 +45,8 @@ export const cw20Tokens = {
         token_addr: "terra15gwkyepfc6xgca5t5zefzwy42uts8l2m4g40k6",
         liq_pool_addr: "terra1amv303y8kzxuegvurh0gug2xe9wkgj65enq2ux",
     },
+    HALO: {
+        token_addr: "terra1w8kvd6cqpsthupsk4l0clwnmek4l3zr7c84kwq",
+        liq_pool_addr: "terra1yjg0tuhc6kzwz9jl8yqgxnf2ctwlfumnvscupp",
+    }
 }
