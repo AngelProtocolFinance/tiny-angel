@@ -5,7 +5,7 @@ import axios from "axios";
 import { toChainAmount, ustValue } from 'functions';
 import { claimReward, donateTinyAmount } from 'msgs';
 import { MsgSend, MsgWithdrawDelegatorReward } from '@terra-money/terra.js';
-import { ANGEL_PROTO_ADDRESS_BOMBAY } from '../../constants';
+import { ANGEL_PROTO_ADDRESS_BOMBAY, ANGEL_PROTO_ADDRESS_MAIN, } from '../../constants';
 import TokenContainer from 'components/Token/TokenContainer';
 import DescriptionSubmit from 'components/DescriptionSubmit/DescriptionSubmit';
 import SectionWrapper from 'components/SectionWrapper/SectionWrapper';
@@ -69,7 +69,7 @@ export default function TinyRewards () {
                 return Object.assign(obj, { [el.denom]: el.amount })
             }, {})
 
-            const [ sendRewardsToAngelMsg ] = donateTinyAmount(user_address, ANGEL_PROTO_ADDRESS_BOMBAY, tinyRewardsObj);
+            const [ sendRewardsToAngelMsg ] = donateTinyAmount(user_address, ANGEL_PROTO_ADDRESS_MAIN, tinyRewardsObj);
             msgs.push(sendRewardsToAngelMsg);
         }
 

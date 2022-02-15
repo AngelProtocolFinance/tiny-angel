@@ -1,7 +1,8 @@
 import { MsgExecuteContract, MsgSend, MsgWithdrawDelegatorReward } from "@terra-money/terra.js";
 
 export const donateTinyAmount = (sender: string, receiver: string, balances: any ): MsgSend[] => {
-
+    if (Object.keys(balances).length === 0) return [];
+    
     return [new MsgSend(
         sender,
         receiver,

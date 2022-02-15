@@ -4,7 +4,7 @@ import { useLCDClient, useWallet } from '@terra-money/wallet-provider';
 import axios from "axios";
 import { getCW20Swaprate, toChainAmount, ustValue } from 'functions';
 import { donateTinyAmount, donateTinyCW20Amount } from 'msgs';
-import { ANGEL_PROTO_ADDRESS_BOMBAY, cw20Tokens } from '../../constants';
+import { ANGEL_PROTO_ADDRESS_BOMBAY, ANGEL_PROTO_ADDRESS_MAIN, cw20Tokens } from '../../constants';
 import TokenContainer from 'components/Token/TokenContainer';
 import DescriptionSubmit from 'components/DescriptionSubmit/DescriptionSubmit';
 import SectionWrapper from 'components/SectionWrapper/SectionWrapper';
@@ -44,8 +44,8 @@ export default function TinyBalances () {
             return Object.assign(obj, { [el.denom]: el.amount })
         }, {})
 
-        const donateNativeMsg = donateTinyAmount(user_address, ANGEL_PROTO_ADDRESS_BOMBAY, balancesObj);
-        const donateCW20Msgs = donateTinyCW20Amount(user_address, ANGEL_PROTO_ADDRESS_BOMBAY, tinyCW20s);
+        const donateNativeMsg = donateTinyAmount(user_address, ANGEL_PROTO_ADDRESS_MAIN, balancesObj);
+        const donateCW20Msgs = donateTinyCW20Amount(user_address, ANGEL_PROTO_ADDRESS_MAIN, tinyCW20s);
 
         const msgs = [...donateNativeMsg, ...donateCW20Msgs];
         setMsgs(msgs);
