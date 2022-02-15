@@ -18,7 +18,19 @@ export const ustValue = (e: any, map: any) => {
 export const sumOf = (donatables: any[], map: any): number =>
 toTerraAmount(donatables.map(b => ustValue(b, map)).reduce((p, c) => p + c, 0))
 
-export const getCW20Swaprate = async ( token: string ): Promise<number> => {
-    const { data } = await axios.get("https://api.anchorprotocol.com/api/v1/market/ust");
-    return Number( data.exchange_rate )
+export const getCW20Swaprate = async ( liq_addr: string ): Promise<number> => {
+    const liquidity_pool_query = 
+    `https://bombay-lcd.terra.dev/wasm/contracts/${liq_addr}/store?query_msg=%7B%22pool%22:%7B%7D%7D`
+    const { data: liq_pool_data } = await axios.get(liquidity_pool_query);
+    
+    const {
+        result: {
+            assets: [
+                { amount: cw20Amount },
+                { amount: nativeAmount },
+            ]
+        }
+    } = liq_pool_data;
+    
+    return nativeAmount / cw20Amount
 }

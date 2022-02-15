@@ -12,8 +12,12 @@ export const visualDenomName = new Map([
     ["usek", "SET"], ["unok", "NOT"], ["udkk", "DKT"],
     ["uidr", "IDT"], ["uphp", "PHT"], ["uhkd", "HKT"],
     ["umyr", "MYT"], ["utwd", "TWT"], ["ANC", "ANC"],
+    ["MINE", "MINE"]
 ])
 
 export const cw20Tokens = {
-    ANC: "terra1747mad58h0w4y589y3sk84r5efqdev9q4r02pc",
+    ANC: {
+        token_addr: "terra1747mad58h0w4y589y3sk84r5efqdev9q4r02pc",
+        liq_pool_addr: "terra1wfvczps2865j0awnurk9m04u7wdmd6qv3fdnvz",
+    },
 }

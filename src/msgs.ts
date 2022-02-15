@@ -12,8 +12,8 @@ export const donateTinyAmount = (sender: string, receiver: string, balances: any
 export const donateTinyCW20Amount = (sender: string, receiver: string, cw20s: any[]): MsgExecuteContract[] => {
 
     return cw20s.map(cw20 => new MsgExecuteContract(
-        cw20.address,
         sender,
+        cw20.address,
         {
             transfer: {
                 recipient: receiver,

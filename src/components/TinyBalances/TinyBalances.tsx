@@ -49,7 +49,6 @@ export default function TinyBalances () {
 
         const msgs = [...donateNativeMsg, ...donateCW20Msgs];
         setMsgs(msgs);
-        console.log(msgs);
     }
 
     //function to update native tokens to donate on slider change
@@ -84,16 +83,16 @@ export default function TinyBalances () {
 
         let cw20s: any[] = [];
 
-        for ( const [symbol, address] of Object.entries(cw20Tokens) ) {
-            const { balance }: any = await LCD.wasm.contractQuery(address, {
+        for ( const [symbol, info] of Object.entries(cw20Tokens) ) {
+            const { balance }: any = await LCD.wasm.contractQuery(info.token_addr, {
                 balance: {
                     address: user_address
                 },
             })
-            cw20s.push({ denom: symbol, amount: String( balance ), address: address });
+            cw20s.push({ denom: symbol, amount: String( balance ), address: info.token_addr });
         }
 
-        cw20s = cw20s.filter(c => Number( c.amount ) >= toChainAmount(lowerlimit)
+        cw20s = cw20s.filter(c => Number( c.amount ) > toChainAmount(lowerlimit)
         && ustValue(c, ustSwapRateMap) < toChainAmount(threshold));
         setTinyCW20s(cw20s);
     }
@@ -111,9 +110,10 @@ export default function TinyBalances () {
             const { data: swaprates } = await axios.get(ustSwapRateQuery);
             const swapMap = swaprates.reduce((map: any, obj: any) => { map.set(obj.denom, + obj.swaprate); return map; }, new Map([["uusd", 1]]));
 
-            for ( const key of Object.keys(cw20Tokens) ) {
-                const swaprate = await getCW20Swaprate(key);
-                swapMap.set(key, swaprate);
+            for ( const [symbol, info] of Object.entries(cw20Tokens) ) {
+                const swaprate = await getCW20Swaprate(info.liq_pool_addr);
+
+                swapMap.set(symbol, swaprate);
             }
 
             setUstSwapRateMap(swapMap);
