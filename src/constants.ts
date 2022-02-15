@@ -15,17 +15,34 @@ export const visualDenomName = new Map([
     ["MINE", "MINE"], ["MIR", "MIR"]
 ])
 
+//BOMBAY
+// export const cw20Tokens = {
+//     ANC: {
+//         token_addr: "terra1747mad58h0w4y589y3sk84r5efqdev9q4r02pc",
+//         liq_pool_addr: "terra1wfvczps2865j0awnurk9m04u7wdmd6qv3fdnvz",
+//     },
+//     MINE: {
+//         token_addr: "terra1lqm5tutr5xcw9d5vc4457exa3ghd4sr9mzwdex",
+//         liq_pool_addr: "terra1n2xmlwqpp942nfqq2muxn0u0mqk3sylekdpqfv",
+//     },
+//     MIR: {
+//         token_addr: "terra10llyp6v3j3her8u3ce66ragytu45kcmd9asj3u",
+//         liq_pool_addr: "terra1cz6qp8lfwht83fh9xm9n94kj04qc35ulga5dl0",
+//     },
+// }
+
+//MAIN
 export const cw20Tokens = {
     ANC: {
-        token_addr: "terra1747mad58h0w4y589y3sk84r5efqdev9q4r02pc",
-        liq_pool_addr: "terra1wfvczps2865j0awnurk9m04u7wdmd6qv3fdnvz",
+        token_addr: "terra14z56l0fp2lsf86zy3hty2z47ezkhnthtr9yq76",
+        liq_pool_addr: "terra1gm5p3ner9x9xpwugn9sp6gvhd0lwrtkyrecdn3",
     },
     MINE: {
-        token_addr: "terra1lqm5tutr5xcw9d5vc4457exa3ghd4sr9mzwdex",
-        liq_pool_addr: "terra1n2xmlwqpp942nfqq2muxn0u0mqk3sylekdpqfv",
+        token_addr: "terra1kcthelkax4j9x8d3ny6sdag0qmxxynl3qtcrpy",
+        liq_pool_addr: "terra178jydtjvj4gw8earkgnqc80c3hrmqj4kw2welz",
     },
     MIR: {
-        token_addr: "terra10llyp6v3j3her8u3ce66ragytu45kcmd9asj3u",
-        liq_pool_addr: "terra1cz6qp8lfwht83fh9xm9n94kj04qc35ulga5dl0",
+        token_addr: "terra15gwkyepfc6xgca5t5zefzwy42uts8l2m4g40k6",
+        liq_pool_addr: "terra1amv303y8kzxuegvurh0gug2xe9wkgj65enq2ux",
     },
 }
