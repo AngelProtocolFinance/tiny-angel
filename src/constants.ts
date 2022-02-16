@@ -13,7 +13,7 @@ export const visualDenomName = new Map([
     ["uidr", "IDT"], ["uphp", "PHT"], ["uhkd", "HKT"],
     ["umyr", "MYT"], ["utwd", "TWT"], ["ANC", "ANC"],
     ["MINE", "MINE"], ["MIR", "MIR"], ["HALO", "HALO"],
-    ["WHALE", "WHALE"]
+    ["WHALE", "WHALE"], ["TWD", "TWD"]
 ])
 
 //BOMBAY

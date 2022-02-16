@@ -121,16 +121,21 @@ const TxModal = ({ msgs }: { msgs: TinyAngelMsgs }): JSX.Element => {
             } catch (error: unknown) {
                 if (error instanceof UserDenied) {
                     res = 'User Denied'
+                    console.log(res);
                 } else if (error instanceof CreateTxFailed) {
                     res = 'Create Tx Failed: ' + error.message
+                    console.log(res);
                 } else if (error instanceof TxFailed) {
                     res = 'Tx Failed: ' + error.message
+                    console.log(res);
                 } else if (error instanceof Timeout) {
                     res = 'Timeout'
                 } else if (error instanceof TxUnspecifiedError) {
                     res = 'Unspecified Error: ' + error.message
+                    console.log(res);
                 } else {
                     res = error instanceof Error ? error.message : String(error)
+                    console.log(res);
                 }
                 setStatus(res === 'User Denied' ? TxStep.Idle : TxStep.Failed)
                 setError(res)

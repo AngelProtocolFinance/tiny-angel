@@ -41,7 +41,7 @@ export default function TinyRewards () {
         relevantRewards = relevantRewards.map((el: any) => {
             return {
                 ...el,
-                amount: Math.floor(el.amount)
+                amount: Math.floor(el.amount) - 1
             }
         })
 
