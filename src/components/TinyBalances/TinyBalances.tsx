@@ -36,7 +36,7 @@ export default function TinyBalances () {
 
     /* postable msgs populator */
     const donate = async () => {
-        if ( tinyBalances.length === 0 ) {
+        if ( tinyBalances.length === 0 && tinyCW20s.length === 0 ) {
             return;
         }
 
