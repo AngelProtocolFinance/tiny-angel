@@ -50,8 +50,4 @@ export const cw20Tokens = {
         token_addr: "terra1w8kvd6cqpsthupsk4l0clwnmek4l3zr7c84kwq",
         liq_pool_addr: "terra1yjg0tuhc6kzwz9jl8yqgxnf2ctwlfumnvscupp",
     },
-    WHALE: {
-        token_addr: "terra1php5m8a6qd68z02t3zpw4jv2pj4vgw4wz0t8mz",
-        liq_pool_addr: "terra1v4kpj65uq63m4x0mqzntzm27ecpactt42nyp5c",
-    }
 }
